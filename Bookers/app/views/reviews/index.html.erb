@@ -1,0 +1,43 @@
+<% if flash[:notice] %>
+	<p class="flash"><%= flash[:notice] %>
+</p>
+<% end %>
+
+<h1 class="title1">Books</h1>
+
+<table class="review_box">
+  <thead>
+    <tr>
+      <th class="heading_title">Title</th>
+      <th>Body</th>
+      <th></th>
+    </tr>
+ </thead>
+   <tbody>
+  <% @reviews.each do |review| %>
+      <tr>
+        <td class="item"><%= review.title %></td>
+        <td class="item"><%= review.body %></td>
+        <td class="item"><%= link_to "Show", review_path(review.id), class: "show_#{id}" %></td>
+        <td class="item"><%= link_to "Edit", edit_review_path(review.id), class: "edit_#{id}" %> </td>
+        <td class="item"><%= link_to "Destroy", review_path(review.id), class: "destroy_#{id}" , method: :delete, data: { confirm: "Are you sure?"} %></td>
+      </tr>
+<% end %>
+  </tbody>
+</table>
+
+<h2 class="title_New_book">New book</h2>
+<%= form_for(@review) do |review| %>
+
+    <h4>Title</h4>
+    <%= review.text_field :title,class:"book_title" %>
+
+    <h4>Body</h4>
+    <%= review.text_area :body, class:"book_body" %>
+
+    <div class="creat_bottum"><%= review.submit 'Create Book' %>
+
+<% end %>
+
+<!--data-disable-with
+	データのpostに時間かかると動いてるのかどうかわからなくてボタン連打しちゃうときある。そういった場合に「送信中...」など分かりやすい文言に差し替えてかつクリック禁止にしてくれる。 -->

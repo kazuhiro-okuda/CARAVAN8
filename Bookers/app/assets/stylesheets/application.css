@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333333;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+	margin: 33px;
+}
+
+.title1 {
+	font-size: 26px;
+	font-weight: bold;
+}
+
+.review_box {
+	font-size: 13px;
+}
+
+
+
+.title_new_book {
+	font-size: 19.5px;
+}
+
+
+.heading_title {
+
+}
+
+.flash {
+    color: green;
+}
+
+.item {
+	padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

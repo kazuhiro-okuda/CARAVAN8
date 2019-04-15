@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+	<p class="flash"><%= flash[:notice] %>
+</p>
+<% end %>
+
+<body>
+    <p id="notice"></p>
+
+<p><strong>Title</strong></p>
+
+<div><%= @review.title %></div>
+
+<p><strong>Body</strong></p>
+
+<div><%= @review.body %></div>
+
+<td><%= link_to "Edit", edit_review_path(@review.id), class: 	"edit_#{id}" %> </td>
+
+<td><%= link_to "Back", reviews_path, class: "back" %> </td>
+
+</body>

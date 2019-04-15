@@ -1,0 +1,14 @@
+<h1>新規投稿</h1>
+<!-- form_for部分 -->
+<%= form_for(@review) do |review| %>
+ 
+    <h4>Title</h4>
+    <%= review.title %>
+ 
+    <h4>Body</h4>
+    <%= review.body %>
+ 
+    <%= f.submit 'show' %>
+    <%= f.submit 'edit' %>
+ 
+<% end %>
