@@ -14,7 +14,7 @@
 
 <div><%= @review.body %></div>
 
-<td><%= link_to "Edit", edit_review_path(@review.id), class: "edit_#{review.id}" %> </td>
+<td><%= link_to "Edit", edit_review_path(@review.id), class: "edit_#{@review.id}" %> </td>
 
 <td><%= link_to "Back", reviews_path, class:"back" %> </td>
 
