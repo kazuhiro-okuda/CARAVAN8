@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
   	  review = Review.new(review_params)
   	  if review.save
   	     flash[:notice] = "Successfully registrated!"
-  	     redirect_to edit_review_path(review.id)
+  	     redirect_to review_path(review.id)
   	  else
   	  	 render :action => "index"
   	  end
